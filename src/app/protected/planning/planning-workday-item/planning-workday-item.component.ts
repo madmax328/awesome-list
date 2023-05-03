@@ -2,6 +2,9 @@ import { Component, Input, OnChanges, SimpleChanges, EventEmitter, Output } from
 
 @Component({ selector: 'al-planning-workday-item', templateUrl: './planning-workday-item.component.html', styles: [] })
 export class PlanningWorkdayItemComponent implements OnChanges {
+removeWorkday(_arg0: string) {
+throw new Error('Method not implemented.');
+}
 	@Input() dueDate: string;
 	@Input() doneTasks: number | string;
 	@Input() remainingTasks: number | string;
@@ -16,8 +19,8 @@ export class PlanningWorkdayItemComponent implements OnChanges {
 		
 	   update(propName: string, propValue: string|number) {
 		
-		removeWorkday(dueDate: string) {
-			this.workdayRemoved.emit(dueDate);
+		removeWorkday(this.dueDate, String); {
+			this.workdayRemoved.emit(this.dueDate);
 		   }
 		   
 		switch (propName) {
@@ -43,6 +46,6 @@ export class PlanningWorkdayItemComponent implements OnChanges {
 		
 	  }
 
-function removeWorkday(dueDate: any, string: any) {
+function removeWorkday(_dueDate: any, _string: any) {
 	throw new Error('Function not implemented.');
 }
